@@ -4,35 +4,42 @@
 
 ## 📦 インストール方法
 
-### 方法1: ZIPダウンロード（推奨）
+### 方法1: 手動インストール（推奨）
 
-1. このリポジトリをZIPとしてダウンロード
-2. 解凍後、プロジェクトルートで以下を実行：
-
-```bash
-# プラグインディレクトリをコピー
-cp -r .claude-plugin /path/to/your/project/
-cp -r commands /path/to/your/project/
-```
-
-### 方法2: Git Clone
+1. このリポジトリをダウンロード：
 
 ```bash
-# リポジトリをクローン
 git clone https://github.com/yourusername/claudecode-custom-commands.git
-
-# プロジェクトにコピー
 cd claudecode-custom-commands
-cp -r .claude-plugin /path/to/your/project/
-cp -r commands /path/to/your/project/
 ```
 
-### 方法3: プラグインとしてインストール（将来対応予定）
-
-Claude Code のプラグイン機能が完全サポートされた後：
+2. コマンドをユーザーの `.claude` ディレクトリにコピー：
 
 ```bash
-claude-code install yourusername/claudecode-custom-commands
+# ホームディレクトリの .claude/commands にコピー
+cp -r commands/* ~/.claude/commands/
+```
+
+3. Claude Code を再起動すると、コマンドが利用可能になります
+
+### 方法2: プロジェクト単位でインストール
+
+特定のプロジェクトでのみ使用したい場合：
+
+```bash
+# プロジェクトルートで実行
+mkdir -p .claude/commands
+cp -r /path/to/claudecode-custom-commands/commands/* .claude/commands/
+```
+
+### 確認方法
+
+Claude Code で以下のコマンドが使えることを確認：
+
+```bash
+/boost "テスト"
+/boost-list
+/boost-clean
 ```
 
 ## 📚 利用可能なコマンド
@@ -94,19 +101,17 @@ claudecode-custom-commands/
 ├── .claude-plugin/
 │   └── plugin.json          # プラグインメタデータ
 ├── commands/                # コマンド格納ディレクトリ
-│   └── boost/              # Boost コマンドグループ
-│       ├── main.md         # /boost コマンド
-│       ├── list.md         # /boost-list コマンド
-│       └── clean.md        # /boost-clean コマンド
+│   ├── boost.md            # /boost コマンド
+│   ├── boost-list.md       # /boost-list コマンド
+│   └── boost-clean.md      # /boost-clean コマンド
 ├── .gitignore
 └── README.md
 ```
 
 ### 新しいコマンドの追加
 
-1. `commands/[グループ名]/` ディレクトリを作成
-2. コマンドファイルを `.md` 形式で作成
-3. frontmatter を追加：
+1. `commands/` ディレクトリにコマンドファイルを作成（`.md` 形式）
+2. frontmatter を追加：
 
 ```markdown
 ---
@@ -122,15 +127,19 @@ model: claude-sonnet-4-20250514
 # コマンドの内容
 ```
 
-4. `.claude-plugin/plugin.json` に追加：
+3. `.claude-plugin/plugin.json` に追加：
 
 ```json
 {
   "commands": [
-    "./commands/[グループ名]/[ファイル名].md"
+    "./commands/your-command.md"
   ]
 }
 ```
+
+**コマンド呼び出し方法:**
+- `commands/mycommand.md` → `/mycommand` として呼び出し可能
+- `commands/my-command.md` → `/my-command` として呼び出し可能
 
 ## 🤝 コントリビューション
 

@@ -4,9 +4,9 @@
   "description": "Parallel task execution with Git Worktree - Boost your productivity",
   "author": "Claude Code Community",
   "commands": [
-    "./commands/boost/main.md",
-    "./commands/boost/list.md",
-    "./commands/boost/clean.md"
+    "./commands/boost.md",
+    "./commands/boost-list.md",
+    "./commands/boost-clean.md"
   ],
   "repository": {
     "type": "git",

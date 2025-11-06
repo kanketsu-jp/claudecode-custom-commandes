@@ -1,0 +1,27 @@
+# Development files - DO NOT publish
+CLAUDE.md
+
+# Temporary files
+.temp/
+*.tmp
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Boost worktrees (generated at runtime)
+.boost/
+../boost-worktrees/
+
+# Environment files
+.env
+.env.local
+.env.*.local

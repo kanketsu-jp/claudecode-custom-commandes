@@ -4,13 +4,30 @@
 
 ## 📦 インストール方法
 
-### 方法1: 手動インストール（推奨）
+### 方法1: プラグインマーケットプレイスから（推奨）
+
+Claude Code でプラグインとしてインストールする最も簡単な方法です：
+
+```bash
+# マーケットプレイスを追加
+/plugin marketplace add kanketsu-jp/claudecode-custom-commandes
+
+# プラグインをインストール
+/plugin install boost-commands@kanketsu-jp/claudecode-custom-commandes
+```
+
+インストール後、すぐに以下のコマンドが使用可能になります：
+- `/boost`
+- `/boost-list`
+- `/boost-clean`
+
+### 方法2: 手動インストール
 
 1. このリポジトリをダウンロード：
 
 ```bash
-git clone https://github.com/yourusername/claudecode-custom-commands.git
-cd claudecode-custom-commands
+git clone https://github.com/kanketsu-jp/claudecode-custom-commandes.git
+cd claudecode-custom-commandes
 ```
 
 2. コマンドをユーザーの `.claude` ディレクトリにコピー：
@@ -22,14 +39,14 @@ cp -r commands/* ~/.claude/commands/
 
 3. Claude Code を再起動すると、コマンドが利用可能になります
 
-### 方法2: プロジェクト単位でインストール
+### 方法3: プロジェクト単位でインストール
 
 特定のプロジェクトでのみ使用したい場合：
 
 ```bash
 # プロジェクトルートで実行
 mkdir -p .claude/commands
-cp -r /path/to/claudecode-custom-commands/commands/* .claude/commands/
+cp -r /path/to/claudecode-custom-commandes/commands/* .claude/commands/
 ```
 
 ### 確認方法
@@ -168,7 +185,7 @@ MIT License
 
 ## 📞 サポート
 
-問題や質問がある場合は、[Issues](https://github.com/yourusername/claudecode-custom-commands/issues) を作成してください。
+問題や質問がある場合は、[Issues](https://github.com/kanketsu-jp/claudecode-custom-commandes/issues) を作成してください。
 
 ---
 

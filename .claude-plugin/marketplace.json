@@ -1,10 +1,11 @@
 {
   "name": "kanketsu-jp-commands",
+  "owner": "kanketsu-jp",
   "description": "Claude Code custom commands collection for productivity enhancement",
   "plugins": [
     {
       "name": "boost-commands",
-      "source": ".",
+      "source": "./",
       "description": "Parallel task execution with Git Worktree - Boost your productivity"
     }
   ]

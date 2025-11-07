@@ -1,12 +1,20 @@
 {
   "name": "kanketsu-jp-commands",
-  "owner": "kanketsu-jp",
+  "owner": {
+    "name": "Kanketsu JP",
+    "email": "noreply@github.com"
+  },
   "description": "Claude Code custom commands collection for productivity enhancement",
   "plugins": [
     {
       "name": "boost-commands",
       "source": "./",
-      "description": "Parallel task execution with Git Worktree - Boost your productivity"
+      "description": "Parallel task execution with Git Worktree - Boost your productivity",
+      "version": "1.0.0",
+      "author": {
+        "name": "Claude Code Community"
+      },
+      "license": "MIT"
     }
   ]
 }

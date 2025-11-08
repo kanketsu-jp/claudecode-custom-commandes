@@ -189,4 +189,61 @@ MIT License
 
 ---
 
-**Note:** このリポジトリは Claude Code コミュニティによってメンテナンスされています。
+
+# おすすめのMCP for Claude code
+確認: `claude mcp list`
+
+## [NextJS](https://github.com/vercel/next-devtools-mcp)
+```
+claude mcp add next-devtools npx next-devtools-mcp@latest
+```
+
+## [chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp)
+```
+claude mcp add chrome-devtools npx chrome-devtools-mcp@latest
+```
+
+## [playwright](https://github.com/microsoft/playwright-mcp)
+```
+claude mcp add playwright npx @playwright/mcp@latest
+```
+
+## Gemin CLI
+```
+claude mcp add gemini-cli -- npx -y gemini-mcp-tool
+```
+
+## [figma-remote-server](https://developers.figma.com/docs/figma-mcp-server/remote-server-installation/#claude-code)
+```
+claude mcp add --transport http figma-remote-mcp
+```
+
+## [excel](https://github.com/haris-musa/excel-mcp-server)
+```
+claude mcp add-json excel-server '{"name":"excel-server","command":"uvx","args":["excel-mcp-server","stdio"]}'
+```
+
+> Excel MCP Serverのグローバルインストール
+> `npm install -g excel-mcp-server`
+
+## [Grep](https://vercel.com/blog/grep-a-million-github-repositories-via-mcp)
+```
+claude mcp add --transport http grep https://mcp.grep.app
+```
+
+## Context7
+```
+claude mcp add --transport sse context7 https://mcp.context7.com/sse
+```
+
+# Tips
+
+## Selenaでブラウザに飛ばされるのを止める
+```
+vim ~/.serena/serena_config.yml
+```
+
+```diff
+- web_dashboard: true
++ web_dashboard: false
+```
